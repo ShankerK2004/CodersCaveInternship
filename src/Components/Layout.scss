@@ -1,0 +1,35 @@
+.bg_img,
+.bg_img2 {
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.bg_img {
+	height: 100vh;
+	clip-path: polygon(0 0, 0% 100%, 58% 100%, 35% 0);
+}
+.overlay {
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-color: rgba(0, 0, 0, 0.4);
+		z-index: 1;
+	}
+}
+.bg_img2 {
+	height: 40vh;
+	background-size: cover;
+	background-position: center center;
+	border-radius: 0 0 20px 20px;
+}
+@media (max-width: 768px) {
+	.bg_img,
+	.bg_img2 {
+		background-size: cover;
+	}
+	.bg_img {
+		display: none;
+		// clip-path: polygon(0 0, 46% 0, 79% 100%, 0 100%);
+	}
+}

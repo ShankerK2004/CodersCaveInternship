@@ -1,0 +1,117 @@
+.skillsPage_content {
+  width: 45vw;
+  height: 64vh;
+  position: absolute;
+  top: 20vh;
+  right: 6vw;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+.skillsPage_content > :where(h1, p) {
+  grid-column-end: 3;
+}
+@media (max-width: 480px) {
+  .skillsPage_content {
+    width: 90vw;
+    height: auto;
+    top: 20vh;
+    right: 5vw;
+    grid-template-columns: 1fr;
+  }
+  .skillsPage_content > :where(h1, p) {
+    grid-column-end: span 2;
+  }
+}
+
+.category {
+  --height: 14vh;
+  --offset: 3vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 20% 80%;
+}
+.category span {
+  --height2: calc(var(--height) - var(--offset));
+  --height3: calc(var(--height) - (var(--offset) * 2));
+  --height4: calc(var(--height) - (var(--offset) * 3));
+  --axisY2: calc(var(--offset) / 2 * -0.2);
+  --axisY3: calc(var(--offset) * -0.6);
+  --axisY4: calc(var(--offset) * -1.1);
+  width: 4px;
+  display: block;
+  rotate: 90deg;
+  background-color: var(--font-clr);
+}
+.category span:nth-child(1) {
+  height: var(--height);
+  transform: translateY(1vh);
+}
+.category span:nth-child(2) {
+  height: var(--height2);
+  transform: translate(-6vh, var(--axisY2));
+}
+.category span:nth-child(3) {
+  height: var(--height3);
+  transform: translate(-9vh, var(--axisY3));
+}
+.category span:nth-child(4) {
+  height: var(--height4);
+  transform: translate(-9vh, var(--axisY4));
+}
+.category section:nth-child(2) {
+  transform: translateY(-10%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 2vh;
+}
+@media (max-width: 480px) {
+  .category {
+    --height: 10vh;
+    --offset: 2vh;
+    grid-template-columns: 1fr;
+  }
+  .category span:nth-child(1), .category span:nth-child(2), .category span:nth-child(3), .category span:nth-child(4) {
+    display: none;
+  }
+}
+
+.contents {
+  text-align: center;
+  flex-direction: column;
+}
+.contents > section {
+  width: 14vw;
+  grid-template-columns: 30% 70%;
+  padding: 0.8rem 0;
+  margin: 0.5rem 0;
+  background-color: var(--btn-bg-clr);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.contents > section svg {
+  font-size: 2rem;
+}
+.contents > section img {
+  width: 60%;
+}
+.contents > section:nth-child(7) img {
+  width: 40%;
+}
+@media (max-width: 480px) {
+  .contents > section {
+    width: 40vw;
+    grid-template-columns: 20% 80%;
+    margin: 0.5rem 0;
+    padding-left: 0.4rem;
+  }
+}
+
+.active {
+  color: #ffbe0b;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.spanActive {
+  background-color: #ffbe0b !important;
+}

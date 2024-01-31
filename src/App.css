@@ -1,0 +1,17 @@
+.reposition_img {
+	background-position: left;
+}
+main > div {
+	min-height: 100vh;
+	position: relative;
+	top: 0;
+	scroll-snap-align: start;
+}
+section h1 {
+	font-size: 2.6rem;
+}
+@media (max-width: 768px) {
+	section h1 {
+		font-size: 2rem;
+	}
+}
